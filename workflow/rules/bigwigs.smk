@@ -58,6 +58,7 @@ rule zscore_normalize_ind_bigwigs:
 		"results/bigwigs/coverage/individual/{sample}.bw"
 	output:
 		"results/bigwigs/zscore_normalized/individual/{sample}.bw"
+	threads: 1
 	conda:
 		"../envs/zscore_normalize_bw.yaml"
 	script:
@@ -68,6 +69,7 @@ rule zscore_normalize_merged_bigwigs:
 		"results/bigwigs/coverage/merged/{sample}.bw"
 	output:
 		"results/bigwigs/zscore_normalized/merged/{sample}.bw"
+	threads: 1
 	conda:
 		"../envs/zscore_normalize_bw.yaml"
 	script:
