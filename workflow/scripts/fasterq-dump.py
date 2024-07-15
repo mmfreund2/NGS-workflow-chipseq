@@ -35,7 +35,7 @@ for output in snakemake.output:
         compress += f"pbzip2 -p{snakemake.threads} {mem} {out_name}; "
 
 tmpdir = "/home/harrison/analysis"
-with tempfile.TemporaryDirectory(dir=tmdir) as tmpdir:
+with tempfile.TemporaryDirectory(dir=tmpdir) as tmpdir:
     mem = f"--mem {mem_mb}M" if mem_mb else ""
 
     shell(
