@@ -34,8 +34,8 @@ for output in snakemake.output:
     elif out_ext == ".bz2":
         compress += f"pbzip2 -p{snakemake.threads} {mem} {out_name}; "
 
-tmpdir = "/home/harrison/analysis"
-with tempfile.TemporaryDirectory(dir=tmpdir) as tmpdir:
+tmppdir = "/home/harrison/analysis"
+with tempfile.TemporaryDirectory(dir=tmppdir) as tmpdir:
     mem = f"--mem {mem_mb}M" if mem_mb else ""
 
     shell(
